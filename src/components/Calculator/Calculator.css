@@ -1,4 +1,4 @@
-.room-calculator {
+.calculator {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
@@ -13,10 +13,6 @@ h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
-}
-
-.input-group {
-    margin-bottom: 20px;
 }
 
 .input-group label {
@@ -35,6 +31,12 @@ h1 {
     margin-bottom: 10px;
 }
 
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -43,11 +45,18 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 10px;
 }
 
 button:hover {
     background-color: #218838;
+}
+
+button+button {
+    background-color: #dc3545;
+}
+
+button+button:hover {
+    background-color: #c82333;
 }
 
 .results {
@@ -57,4 +66,12 @@ button:hover {
 .results p {
     font-size: 18px;
     color: #555;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }

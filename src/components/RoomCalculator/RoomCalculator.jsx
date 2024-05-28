@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./RoomCalculator.css";
+import "../RoomCalculator/RoomCalculator.css";
 
 function RoomCalculator() {
   const [dimensions, setDimensions] = useState([{ length: "", width: "" }]);
@@ -62,9 +62,15 @@ function RoomCalculator() {
           />
         </div>
       ))}
-      <button onClick={handleAddDimension}>Dodaj powierzchnię</button>
-      <button onClick={handleCalculateArea}>Oblicz metry kwadratowe</button>
-      <button onClick={handleReset}>Resetuj</button>
+      <div className="button-group">
+        <button onClick={handleCalculateArea}>Oblicz metry kwadratowe</button>
+        <button className="reset-button" onClick={handleReset}>
+          Resetuj
+        </button>
+      </div>
+      <div className="button-group">
+        <button onClick={handleAddDimension}>Dodaj powierzchnię</button>
+      </div>
       {totalArea !== null && (
         <div className="results">
           <p style={{ color: "red" }}>

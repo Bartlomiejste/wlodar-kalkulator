@@ -1,8 +1,8 @@
 import React from "react";
-import Calculator from "./components/Calculator";
-import RoomCalculator from "./components/RoomCalculator";
-import UnitConverter from "./components/UnitConverter";
 import "./index.css";
+import Calculator from "./components/Calculator/Calculator";
+import RoomCalculator from "./components/RoomCalculator/RoomCalculator";
+import UnitConverter from "./components/UnitConverter/UnitConverter";
 
 export const App = () => {
   return (

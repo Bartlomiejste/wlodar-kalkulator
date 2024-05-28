@@ -1,7 +1,5 @@
-// src/Calculator.jsx
-
 import React, { useState, useEffect } from "react";
-import "./Calculator.css";
+import "../Calculator/Calculator.css";
 
 function Calculator() {
   const [area, setArea] = useState("");
@@ -71,6 +69,27 @@ function Calculator() {
     }
   };
 
+  const handleResetCementFromArea = () => {
+    setArea("");
+    setThickness("");
+    setCementFromArea(null);
+  };
+
+  const handleResetCementFromThickness = () => {
+    setCementThicknessCm("");
+    setCementFromThickness(null);
+  };
+
+  const handleResetSand = () => {
+    setSandArea("");
+    setSand(null);
+  };
+
+  const handleResetExpansion = () => {
+    setExpansionArea("");
+    setExpansion(null);
+  };
+
   return (
     <div className="calculator">
       <h1>Kalkulator cementu i piasku</h1>
@@ -89,9 +108,12 @@ function Calculator() {
           value={thickness}
           onChange={(e) => setThickness(e.target.value)}
         />
-        <button onClick={handleCalculateCementFromArea}>
-          Oblicz ilość cementu na podstawie powierzchni w m²
-        </button>
+        <div className="button-group">
+          <button onClick={handleCalculateCementFromArea}>
+            Oblicz ilość cementu na podstawie powierzchni w m²
+          </button>
+          <button onClick={handleResetCementFromArea}>Resetuj</button>
+        </div>
         {cementFromArea !== null && (
           <div className="results">
             <p style={{ color: "red" }}>
@@ -110,9 +132,12 @@ function Calculator() {
           value={cementThicknessCm}
           onChange={(e) => setCementThicknessCm(e.target.value)}
         />
-        <button onClick={handleCalculateCementFromThickness}>
-          Oblicz ilość cementu na podstawie grubości
-        </button>
+        <div className="button-group">
+          <button onClick={handleCalculateCementFromThickness}>
+            Oblicz ilość cementu na podstawie grubości
+          </button>
+          <button onClick={handleResetCementFromThickness}>Resetuj</button>
+        </div>
         {cementFromThickness !== null && (
           <div className="results">
             <p style={{ color: "red" }}>
@@ -131,9 +156,12 @@ function Calculator() {
           value={sandArea}
           onChange={(e) => setSandArea(e.target.value)}
         />
-        <button onClick={handleCalculateSand}>
-          Oblicz ilość piasku na podstawie powierzchni
-        </button>
+        <div className="button-group">
+          <button onClick={handleCalculateSand}>
+            Oblicz ilość piasku na podstawie powierzchni
+          </button>
+          <button onClick={handleResetSand}>Resetuj</button>
+        </div>
         {sand !== null && (
           <div className="results">
             <p style={{ color: "red" }}>
@@ -153,7 +181,10 @@ function Calculator() {
           value={expansionArea}
           onChange={(e) => setExpansionArea(e.target.value)}
         />
-        <button onClick={handleCalculateExpansion}>Oblicz dylatację</button>
+        <div className="button-group">
+          <button onClick={handleCalculateExpansion}>Oblicz dylatację</button>
+          <button onClick={handleResetExpansion}>Resetuj</button>
+        </div>
         {expansion !== null && (
           <div className="results">
             <p style={{ color: "red" }}>

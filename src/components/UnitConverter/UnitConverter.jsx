@@ -1,7 +1,5 @@
-// src/UnitConverter.jsx
-
 import React, { useState } from "react";
-import "./UnitConverter.css";
+import "../UnitConverter/UnitConverter.css";
 
 function UnitConverter() {
   const [meters, setMeters] = useState("");
@@ -43,7 +41,12 @@ function UnitConverter() {
           value={meters}
           onChange={(e) => setMeters(e.target.value)}
         />
-        <button onClick={handleConvertToCm}>Konwertuj na cm</button>
+        <div className="button-group">
+          <button onClick={handleConvertToCm}>Konwertuj na cm</button>
+          <button className="reset-button" onClick={handleReset}>
+            Resetuj
+          </button>
+        </div>
         {convertedToCm !== null && (
           <div className="results">
             <p style={{ color: "red" }}>
@@ -60,7 +63,12 @@ function UnitConverter() {
           value={centimeters}
           onChange={(e) => setCentimeters(e.target.value)}
         />
-        <button onClick={handleConvertToM}>Konwertuj na m</button>
+        <div className="button-group">
+          <button onClick={handleConvertToM}>Konwertuj na m</button>
+          <button className="reset-button" onClick={handleReset}>
+            Resetuj
+          </button>
+        </div>
         {convertedToM !== null && (
           <div className="results">
             <p style={{ color: "red" }}>
@@ -69,8 +77,6 @@ function UnitConverter() {
           </div>
         )}
       </div>
-
-      <button onClick={handleReset}>Resetuj</button>
     </div>
   );
 }
