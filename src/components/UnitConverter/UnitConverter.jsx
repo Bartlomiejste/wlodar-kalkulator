@@ -41,6 +41,7 @@ function UnitConverter() {
         <label>Metry (m): </label>
         <input
           type="number"
+          min={0}
           value={meters}
           onChange={(e) => setMeters(e.target.value)}
         />
@@ -65,6 +66,7 @@ function UnitConverter() {
         <label>Centymetry (cm): </label>
         <input
           type="number"
+          min={0}
           value={centimeters}
           onChange={(e) => setCentimeters(e.target.value)}
         />

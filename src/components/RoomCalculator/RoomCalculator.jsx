@@ -48,6 +48,7 @@ function RoomCalculator() {
         <div className="input-group" key={index}>
           <label>Długość (m): </label>
           <input
+            min={0}
             type="number"
             name="length"
             value={dim.length}
@@ -55,6 +56,7 @@ function RoomCalculator() {
           />
           <label>Szerokość (m): </label>
           <input
+            min={0}
             type="number"
             name="width"
             value={dim.width}
