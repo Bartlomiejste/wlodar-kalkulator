@@ -63,17 +63,21 @@ function RoomCalculator() {
         </div>
       ))}
       <div className="button-group">
-        <button onClick={handleCalculateArea}>Oblicz metry kwadratowe</button>
+        <button className="button" onClick={handleCalculateArea}>
+          Oblicz metry kwadratowe
+        </button>
         <button className="reset-button" onClick={handleReset}>
           Resetuj
         </button>
       </div>
       <div className="button-group">
-        <button onClick={handleAddDimension}>Dodaj powierzchnię</button>
+        <button className="button" onClick={handleAddDimension}>
+          Dodaj powierzchnię
+        </button>
       </div>
       {totalArea !== null && (
-        <div className="results">
-          <p style={{ color: "red" }}>
+        <div>
+          <p style={{ color: "#1F7BFF" }}>
             Całkowita powierzchnia: {totalArea.toFixed(2)} m²
           </p>
         </div>

@@ -41,18 +41,19 @@ h1 {
     margin-bottom: 10px;
 }
 
-button {
+.btn,
+.reset-button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #28a745;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+.btn:hover {
+    background-color: #218838;
 }
 
 .reset-button {
@@ -61,15 +62,6 @@ button:hover {
 
 .reset-button:hover {
     background-color: #c82333;
-}
-
-.results {
-    margin-top: 10px;
-}
-
-.results p {
-    font-size: 18px;
-    color: #555;
 }
 
 /* Media Query for Mobile Devices */

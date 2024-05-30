@@ -23,11 +23,14 @@ function UnitConverter() {
     }
   };
 
-  const handleReset = () => {
-    setMeters("");
-    setCentimeters("");
-    setConvertedToCm(null);
+  const handleResetM = () => {
     setConvertedToM(null);
+    setCentimeters("");
+  };
+
+  const handleResetCm = () => {
+    setMeters("");
+    setConvertedToCm(null);
   };
 
   return (
@@ -42,14 +45,16 @@ function UnitConverter() {
           onChange={(e) => setMeters(e.target.value)}
         />
         <div className="button-group">
-          <button onClick={handleConvertToCm}>Konwertuj na cm</button>
-          <button className="reset-button" onClick={handleReset}>
+          <button className="btn" onClick={handleConvertToCm}>
+            Konwertuj na cm
+          </button>
+          <button className="reset-button" onClick={handleResetCm}>
             Resetuj
           </button>
         </div>
         {convertedToCm !== null && (
-          <div className="results">
-            <p style={{ color: "red" }}>
+          <div>
+            <p style={{ color: "#1F7BFF" }}>
               {meters} m = {convertedToCm} cm
             </p>
           </div>
@@ -64,14 +69,16 @@ function UnitConverter() {
           onChange={(e) => setCentimeters(e.target.value)}
         />
         <div className="button-group">
-          <button onClick={handleConvertToM}>Konwertuj na m</button>
-          <button className="reset-button" onClick={handleReset}>
+          <button className="btn" onClick={handleConvertToM}>
+            Konwertuj na m
+          </button>
+          <button className="reset-button" onClick={handleResetM}>
             Resetuj
           </button>
         </div>
         {convertedToM !== null && (
-          <div className="results">
-            <p style={{ color: "red" }}>
+          <div>
+            <p style={{ color: "#1F7BFF" }}>
               {centimeters} cm = {convertedToM} m
             </p>
           </div>
